@@ -9,6 +9,7 @@ import { Router, Route, hashHistory } from 'react-router';
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router history={hashHistory}>
+
       <Route path="/" component={PokemonIndexContainer}>
         <Route path="pokemon/:pokemonId" component={PokemonDetailContainer}>
         </Route>

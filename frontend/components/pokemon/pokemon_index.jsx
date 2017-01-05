@@ -14,6 +14,7 @@ class PokemonIndex extends Component {
   render() {
     return (
       <div>
+        {this.props.children}
         <ul>
           {this.props.pokemon
             .map((pok) => {
@@ -23,7 +24,6 @@ class PokemonIndex extends Component {
             })
           }
         </ul>
-        {this.props.children}
       </div>
     );
   }

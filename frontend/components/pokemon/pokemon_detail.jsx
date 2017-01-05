@@ -23,21 +23,21 @@ class PokemonDetail extends Component {
     ));
 
     return (
-      <div>
+      <div className='pokemonDetailView'>
         <img className='large-img' src={pokemon.image_url} /> <br />
 
         <h3>{pokemon.name}</h3>
-        <h5>Type: {pokemon.poke_type}</h5>
+        <h4>Type: {pokemon.poke_type}</h4>
 
-        <h5>Attack: {pokemon.attack}</h5>
+        <h4>Attack: {pokemon.attack}</h4>
 
-        <h5>Defense: {pokemon.defense}</h5>
-
-
-        <h5>Moves: {movesArray}</h5>
+        <h4>Defense: {pokemon.defense}</h4>
 
 
-        <h5>Items: {itemsArray.join(', ')}</h5>
+        <h4>Moves: {movesArray}</h4>
+
+
+        <h4>Items: {itemsArray.join(', ')}</h4>
 
       </div>
     );
