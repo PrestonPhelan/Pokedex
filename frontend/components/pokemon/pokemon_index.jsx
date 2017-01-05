@@ -13,15 +13,18 @@ class PokemonIndex extends Component {
 
   render() {
     return (
-      <ul>
-        {this.props.pokemon
-          .map((pok) => {
-            return (
-              <PokemonIndexItem key={pok.id} pokemon={pok} />
-            );
-          })
-        }
-      </ul>
+      <div>
+        <ul>
+          {this.props.pokemon
+            .map((pok) => {
+              return (
+                <PokemonIndexItem key={pok.id} pokemon={pok} />
+              );
+            })
+          }
+        </ul>
+        {this.props.children}
+      </div>
     );
   }
 }

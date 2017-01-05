@@ -12,7 +12,7 @@ import { Link } from 'react-router';
 
 export default ({pokemon}) => (
   <li>
-    <Link to="pokemon/:pokemonID">
+    <Link to={`pokemon/${pokemon.id}`}>
       <img className='small-img' src={pokemon.image_url}/><br/>
       {pokemon.name}
     </Link>
