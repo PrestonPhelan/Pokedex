@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import ItemDetailContainer from '../items/item_detail_container';
+
+import { Link } from 'react-router';
+
 class PokemonDetail extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +22,10 @@ class PokemonDetail extends Component {
   render() {
     const pokemon = this.props.pokemonDetail;
     const movesArray = pokemon.moves.join(', ');
-    const itemsArray = pokemon.items.map( item => (
-      item.name
+    const itemsPicArray = pokemon.items.map( item => (
+      <Link to={`pokemon/${this.props.params.pokemonId}/item/${item.id}` } key={item.id}>
+        <img src={item.image_url} className='item-img' />
+      </Link>
     ));
 
     return (
@@ -37,7 +43,9 @@ class PokemonDetail extends Component {
         <h4>Moves: {movesArray}</h4>
 
 
-        <h4>Items: {itemsArray.join(', ')}</h4>
+        <h4>Items</h4>
+        {itemsPicArray}
+        {this.props.children}
 
       </div>
     );
